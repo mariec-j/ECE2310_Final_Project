@@ -42,4 +42,14 @@ bool SensorData::getMotion(){
     return motion;
 }
 
+double SensorData::getSmoke(){
+    return smoke;
+}
 
+double SensorData::getTemp(){
+    return temp;
+}
+
+void SensorData::setTemp(double temp){
+    this->temp = temp;
+}

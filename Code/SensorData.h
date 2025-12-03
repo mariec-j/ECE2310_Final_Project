@@ -3,9 +3,9 @@
 #include <string>
 class SensorData {
     public:
-        SensorData(long ts, string deviceID, double co, double humidity, bool light, double lpg, bool motion, double smoke, double temp);
+        SensorData(long ts, std::string deviceID, double co, double humidity, bool light, double lpg, bool motion, double smoke, double temp);
         long getTimestamp();
-        string getDeviceID();
+        std::string getDeviceID();
         double getCO();
         double getHumidity();
         bool getLight();
@@ -14,11 +14,10 @@ class SensorData {
         double getSmoke();
         double getTemp();
         void setTemp(double temp);
-        void convertTempToCelsius();
     
     private:
         long ts;
-        string deviceID;
+        std::string deviceID;
         double co;
         double humidity;
         bool light;
