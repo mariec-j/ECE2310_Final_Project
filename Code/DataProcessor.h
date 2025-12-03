@@ -5,18 +5,22 @@
 #include <string>
 #include <list>
 using namespace std;
+#include<map>
 
 class ProcessorData{
 
     public:
     //constructor
     ProcessorData();
+    //acessor
+    list<SensorData> getProcessedData(); //so this has a private var
 
-    list<SensorData> getProcessedData() const; //so this has a private var
+    //
+   void SetProcessedData (list<SensorData> data); //const???, IDk bc gettinging data so cant change 
 
-    list<SensorData> SetProcessedData (const list<SensorData> data); //const???, IDk bc gettinging data so cant change 
+    list<SensorData> processData(list<SensorData> data);
 
-    list<SensorData> processData(const list<SensorData> data);
+    map<string list<SensorData> groupByDevice(list<SensorData> data);
 
     private:
     list<SensorData> ProcessedData;
