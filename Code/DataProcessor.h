@@ -16,7 +16,7 @@ class ProcessorData{
     list<SensorData> getProcessedData(); //so this has a private var
 
     //
-   void SetProcessedData (list<SensorData> data); //const???, IDk bc gettinging data so cant change 
+   void SetProcessedData (list<SensorData> data); //passing thru data 
 
     list<SensorData> processData(list<SensorData> data);
 
@@ -24,7 +24,6 @@ class ProcessorData{
 
     private:
     list<SensorData> ProcessedData;
-
 };
 
 #endif
