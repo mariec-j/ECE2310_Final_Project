@@ -13,6 +13,14 @@ list<SensorData> DataProcessor::getProcessedData(){
 }
 
 list<SensorData> DataProcessor::SetProcessedData(){
-    ProcessedData = data //data is the var we passed thru in .h
+    ProcessedData = data; //data is the var we passed thru in .h
 }
+
+//idk, its tricky now
+list<SensorData> DataProcessor::processData(){
+}
+
+list<SensorData> DataProcessor::groupByDevice(){
+}
+
 
