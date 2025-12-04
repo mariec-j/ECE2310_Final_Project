@@ -1,7 +1,7 @@
 #ifndef FILEWRITER_H
 #define FILEWRITER_H
 #include <string>
-#include <vector>
+#include <list>
 #include "SensorData.h"
 using namespace std;
 
@@ -18,8 +18,8 @@ class FileWriter{
 
         void setOutputDirectory(const string& directory);
 
-        void writeData(const vector<SensorData>& data, const string& fileName) const;
-        void writeByAttribute(const vector<SensorData>& data, const string& attribute) const;
+        void writeData(const list<SensorData>& data, const string& fileName) const;
+        void writeByAttribute(const list<SensorData>& data, const string& attribute) const;
 };
 
 #endif

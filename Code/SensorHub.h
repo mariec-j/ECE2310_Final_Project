@@ -2,10 +2,11 @@
 #define SENSORHUB_H
 
 #include <string>
-#include <vector>
+#include <list>
 #include <sstream>
 #include <fstream>
 #include <iostream>
+#include <map>
 #include "SensorData.h"
 #include "FileWriter.h"
 #include "DataProcessor.h"

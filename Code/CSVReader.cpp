@@ -17,8 +17,8 @@ void CSVReader::setFilePath(const string& newFilePath) {
     filePath = newFilePath;
 }
 
-vector<SensorData> CSVReader::readData() const {
-    vector<SensorData> dataList;
+list<SensorData> CSVReader::readData() const {
+    list<SensorData> dataList;
     ifstream file(filePath);
 //for debugging, might remove later?
     if (!file.is_open()) {

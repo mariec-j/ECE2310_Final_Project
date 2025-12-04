@@ -4,8 +4,9 @@
 #include "SensorData.h"
 #include <string>
 #include <list>
+#include <map>
 using namespace std;
-#include<map>
+
 
 class DataProcessor{
 

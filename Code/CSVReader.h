@@ -1,7 +1,7 @@
 #ifndef CSVREADER_H
 #define CSVREADER_H
 #include <string>
-#include <vector>
+#include <list>
 #include <sstream>
 #include <fstream>
 #include <iostream>
@@ -18,7 +18,7 @@ class CSVReader {
 
         void setFilePath(const string& newFilePath);
 
-        vector<SensorData> readData() const;
+        list<SensorData> readData() const;
 
     private:
         string filePath;
