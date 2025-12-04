@@ -1,8 +1,8 @@
 @startuml groupProjectUMLRevised
 
 class SensorData {
-  - timestamp: long {readOnly}
-  - deviceID: String {readOnly}
+  - timestamp: long
+  - deviceID: String
   - co: double
   - humidity: double
   - light: boolean
@@ -11,40 +11,38 @@ class SensorData {
   - smoke: double
   - temp: double
 
-  + SensorData(ts: long, deviceID: String, co: double, humidity: double,
-               light: boolean, lpg: double, motion: boolean,
-               smoke: double, temp: double)
+  + SensorData(ts: long, deviceID: String, co: double, humidity: double, light: boolean, lpg: double, motion: boolean, smoke: double, temp: double)
 
-  + getTimestamp(): long {query}
-  + getDeviceID(): String {query}
-  + getCO(): double {query}
-  + getHumidity(): double {query}
-  + getLight(): boolean {query}
-  + getLPG(): double {query}
-  + getMotion(): boolean {query}
-  + getSmoke(): double {query}
-  + getTemp(): double {query}
+  + getTimestamp(): long
+  + getDeviceID(): String
+  + getCO(): double
+  + getHumidity(): double
+  + getLight(): boolean
+  + getLPG(): double
+  + getMotion(): boolean
+  + getSmoke(): double
+  + getTemp(): double
   + setTemp(temp: double): void
 }
 
 class CSVReader {
-  - filePath: String {readOnly}
+  - filePath: String
   + CSVReader(filePath: String)
-  + readData(): List<SensorData>
+  + readData(): List
 }
 
 class DataProcessor {
-  + convertTempToCelsius(data: List<SensorData>): List<SensorData>
-  + groupByDevice(data: List<SensorData>): Map<String, List<SensorData>>
+  + convertTempToCelsius(data: List): List
+  + groupByDevice(data: List): Map
 }
 
 class FileWriter {
   - outputDirectory: String
   + FileWriter(outputDirectory: String)
-  + getOutputDirectory(): String {query}
+  + getOutputDirectory(): String
   + setOutputDirectory(directory: String): void
-  + writeData(data: List<SensorData>, fileName: String): void
-  + exportAttributeFile(data: List<SensorData>, attribute: String): void
+  + writeData(data: List, fileName: String): void
+  + exportAttributeFile(data: List, attribute: String): void
 }
 
 class SensorHub {
@@ -54,12 +52,11 @@ class SensorHub {
   + exportData(): void
 }
 
-CSVReader --> SensorData : produces [*]
-DataProcessor --> SensorData : consumes [*]
-DataProcessor --> SensorData : converts temp + groups
-SensorHub *-- SensorData : orchestrates [*]
-SensorHub --> CSVReader : uses
-SensorHub --> DataProcessor : uses
-SensorHub --> FileWriter : uses
+CSVReader --> SensorData : "creates"
+DataProcessor --> SensorData : "process"
+SensorHub *-- SensorData : "owns"
+SensorHub --> CSVReader : "uses"
+SensorHub --> DataProcessor : "uses"
+SensorHub --> FileWriter : "uses"
 
 @enduml
