@@ -22,11 +22,6 @@ void DataProcessor::SetProcessedData(list<SensorData> data){
    // list<SensorData> processed;
 //}
 
-
-
-
-
-
 map<string,list<SensorData>> DataProcessor::groupByDevice(list<SensorData> data){
     map<string, list<SensorData>> groupedData;
 
@@ -41,22 +36,14 @@ map<string,list<SensorData>> DataProcessor::groupByDevice(list<SensorData> data)
 for(const auto& dataElement: data){
 
 //getting/setting deivceID by accessing it from SensorData and retriving the value thrui getDeviceID
-string deviceID = SensorData.getDeviceID();
+string deviceID = dataElement.getDeviceID();
 //getDeviceID will either add the DeviceID to the key or if already added will just access DeviceID
 
 //we are now indexing our dataID assigning a hmerical value to each row under device
-groupedData[deviceID].push_back(SensorData);
+groupedData[deviceID].push_back(dataElement);
 }
 return groupedData;
 }
-
-
-
-
-
-
-
-
 
 //should it be temp or TempC does it matter?
 void ProcessedData::convertTempToCelcius(){
