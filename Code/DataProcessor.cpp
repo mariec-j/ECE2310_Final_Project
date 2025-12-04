@@ -18,18 +18,20 @@ void DataProcessor::SetProcessedData(list<SensorData> data){
 
 
 
-
 //idk, its tricky now
 list<SensorData> DataProcessor::processData(list<SensorData> data){
+    list<SensorData> processed;
 
 }
 
 
 
-
-
 map<string,list<SensorData>> DataProcessor::groupByDevice(list<SensorData> data){
-    
+    map<string, list<SensorData>> groupedData;
+
+//does this work, nooo 
+return string deviceID = SensorData.getDeviceID;
+
 }
 
 
@@ -38,7 +40,7 @@ map<string,list<SensorData>> DataProcessor::groupByDevice(list<SensorData> data)
 
 //do I pass anything thru this???
 void ProcessedData::convertTempToCelcius(){
-    TempC = (5/9) * (TempF - 32);
+    TempC = (5.0/9.0) * (TempF - 32);
     return Cel;
 }
 
