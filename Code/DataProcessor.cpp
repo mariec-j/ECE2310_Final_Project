@@ -30,7 +30,7 @@ map<string,list<SensorData>> DataProcessor::groupByDevice(list<SensorData> data)
     map<string, list<SensorData>> groupedData;
 
 //does this work, nooo 
-return string deviceID = SensorData.getDeviceID;
+string deviceID = SensorData.getDeviceID();
 
 }
 
@@ -40,8 +40,12 @@ return string deviceID = SensorData.getDeviceID;
 
 //do I pass anything thru this???
 void ProcessedData::convertTempToCelcius(){
-    TempC = (5.0/9.0) * (TempF - 32);
-    return Cel;
+   
+    double TempF = SensorData.getTemp();
+   
+    double TempC = (5.0/9.0) * (TempF - 32.0);
+    
+    SensorData.setTemp(TempC);
 }
 
 
