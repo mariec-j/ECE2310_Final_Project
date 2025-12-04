@@ -13,7 +13,7 @@ class FileWriter{
 
         string getOutputDirectory() const;
 
-        void setOUtputDirectory(const string& directory);
+        void setOutputDirectory(const string& directory);
 
         void writeData(const vector<SensorData>& data, const string& fileName) const;
         void writeByAttribute(const vector<SensorData>& data, const string& attribute) const;

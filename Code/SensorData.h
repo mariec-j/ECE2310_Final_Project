@@ -4,15 +4,15 @@
 class SensorData {
     public:
         SensorData(long ts, std::string deviceID, double co, double humidity, bool light, double lpg, bool motion, double smoke, double temp);
-        long getTimestamp();
-        std::string getDeviceID();
-        double getCO();
-        double getHumidity();
-        bool getLight();
-        double getLPG();
-        bool getMotion();
-        double getSmoke();
-        double getTemp();
+        long getTimestamp() const;
+        std::string getDeviceID() const;
+        double getCO() const;
+        double getHumidity() const;
+        bool getLight() const;
+        double getLPG() const;
+        bool getMotion() const;
+        double getSmoke() const;
+        double getTemp() const;
         void setTemp(double temp);
     
     private:

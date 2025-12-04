@@ -13,7 +13,7 @@ void FileWriter::setOutputDirectory (const string& directory){
     outputDirectory = directory;
 }
 
-void FileWriter::writeData (vector<SensorData>& data, const string& fileName) {
+void FileWriter::writeData(const vector<SensorData>& data, const string& fileName) const {
     ofstream outFile(outputDirectory + "/" + fileName);
     if (!outFile.is_open()){
         cerr << "Error: Could not open file for writing: " << fileName << endl;
@@ -35,7 +35,7 @@ void FileWriter::writeData (vector<SensorData>& data, const string& fileName) {
     outFile.close();
 }
 
-void FileWriter::writeByAttribute(vector<SensorData>& data, const string& attribute) {
+void FileWriter::writeByAttribute(const vector<SensorData>& data, const string& attribute) const {
     std::ofstream outFile(outputDirectory + "/" + attribute + ".csv");
 
     if (!outFile.is_open()) {
