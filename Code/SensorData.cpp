@@ -2,6 +2,8 @@
 #include "SensorData.h"
 using namespace std;
 
+SensorData::SensorData() {}
+
 SensorData::SensorData(long ts, string deviceID, double co, double humidity, bool light, double lpg, bool motion, double smoke, double temp){
     this->ts = ts;
     this->deviceID = deviceID;
@@ -14,39 +16,39 @@ SensorData::SensorData(long ts, string deviceID, double co, double humidity, boo
     this->temp = temp;
 }
 
-long SensorData::getTimestamp(){
+long SensorData::getTimestamp() const{
     return ts;
 }
 
-string SensorData::getDeviceID(){
+string SensorData::getDeviceID() const{
     return deviceID;
 }
 
-double SensorData::getCO(){
+double SensorData::getCO() const {
     return co;
 }
 
-double SensorData::getHumidity(){
+double SensorData::getHumidity() const {
     return humidity;
 }
 
-bool SensorData::getLight(){
+bool SensorData::getLight() const {
     return light;
 }
 
-double SensorData::getLPG(){
+double SensorData::getLPG() const {
     return lpg;
 }
 
-bool SensorData::getMotion(){
+bool SensorData::getMotion() const {
     return motion;
 }
 
-double SensorData::getSmoke(){
+double SensorData::getSmoke() const {
     return smoke;
 }
 
-double SensorData::getTemp(){
+double SensorData::getTemp() const {
     return temp;
 }
 
