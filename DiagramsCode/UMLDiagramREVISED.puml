@@ -1,0 +1,65 @@
+@startuml groupProjectUMLRevised
+
+class SensorData {
+  - timestamp: long {readOnly}
+  - deviceID: String {readOnly}
+  - co: double
+  - humidity: double
+  - light: boolean
+  - lpg: double
+  - motion: boolean
+  - smoke: double
+  - temp: double
+
+  + SensorData(ts: long, deviceID: String, co: double, humidity: double,
+               light: boolean, lpg: double, motion: boolean,
+               smoke: double, temp: double)
+
+  + getTimestamp(): long {query}
+  + getDeviceID(): String {query}
+  + getCO(): double {query}
+  + getHumidity(): double {query}
+  + getLight(): boolean {query}
+  + getLPG(): double {query}
+  + getMotion(): boolean {query}
+  + getSmoke(): double {query}
+  + getTemp(): double {query}
+  + setTemp(temp: double): void
+}
+
+class CSVReader {
+  - filePath: String {readOnly}
+  + CSVReader(filePath: String)
+  + readData(): List<SensorData>
+}
+
+class DataProcessor {
+  + convertTempToCelsius(data: List<SensorData>): List<SensorData>
+  + groupByDevice(data: List<SensorData>): Map<String, List<SensorData>>
+}
+
+class FileWriter {
+  - outputDirectory: String
+  + FileWriter(outputDirectory: String)
+  + getOutputDirectory(): String {query}
+  + setOutputDirectory(directory: String): void
+  + writeData(data: List<SensorData>, fileName: String): void
+  + exportAttributeFile(data: List<SensorData>, attribute: String): void
+}
+
+class SensorHub {
+  + SensorHub(reader: CSVReader, processor: DataProcessor, writer: FileWriter)
+  + collectData(): void
+  + runProcessing(): void
+  + exportData(): void
+}
+
+CSVReader --> SensorData : produces [*]
+DataProcessor --> SensorData : consumes [*]
+DataProcessor --> SensorData : converts temp + groups
+SensorHub *-- SensorData : orchestrates [*]
+SensorHub --> CSVReader : uses
+SensorHub --> DataProcessor : uses
+SensorHub --> FileWriter : uses
+
+@enduml
