@@ -30,7 +30,7 @@ FileWriter SensorHub::getFileWriter() const {
 
 // Setters
 
-void SensorHub::Data(list<SensorData> data) {
+void SensorHub::setData(list<SensorData> data) {
     this->data = data;
 }
 

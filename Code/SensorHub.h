@@ -26,7 +26,7 @@ class SensorHub {
         FileWriter getFileWriter() const;
     
     // Setters
-        void Data(list<SensorData> data);
+        void setData(list<SensorData> data);
         void setCSVReader(CSVReader reader);
         void setDataProcessor(DataProcessor processor);
         void setFileWriter(FileWriter writer);
