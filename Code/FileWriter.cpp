@@ -3,6 +3,10 @@
 #include <iostream>
 using namespace std;
 
+FileWriter::FileWriter () {
+    outputDirectory = "";
+}
+
 FileWriter::FileWriter(const string& outputDirectory):outputDirectory(outputDirectory){}
 
 string FileWriter::getOutputDirectory() const{

@@ -3,6 +3,7 @@
 #include <string>
 class SensorData {
     public:
+        SensorData();
         SensorData(long ts, std::string deviceID, double co, double humidity, bool light, double lpg, bool motion, double smoke, double temp);
         long getTimestamp() const;
         std::string getDeviceID() const;

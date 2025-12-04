@@ -1,11 +1,11 @@
 #include <iostream>
 #include "DataProcessor.h"
-using namespace std;
 #include <list>
-#include<map>
+#include <map>
+using namespace std;
 
 //constructor
-DataProcessor::DataProcessor(){}
+DataProcessor::DataProcessor() {}
 
 ////
 list<SensorData> DataProcessor::getProcessedData(){
@@ -54,5 +54,3 @@ void DataProcessor::convertTempToCelcius(){
     }
 
 }
-
-

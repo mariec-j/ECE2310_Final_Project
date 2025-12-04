@@ -5,6 +5,8 @@
 #include <iostream>
 using namespace std;
 
+CSVReader::CSVReader() { filePath = ""; }
+
 CSVReader::CSVReader(const string& filePath) : filePath(filePath) {}
 
 string CSVReader::getFilePath() const {

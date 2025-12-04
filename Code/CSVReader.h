@@ -10,6 +10,8 @@ using namespace std;
 
 class CSVReader {
     public:
+        CSVReader();
+    
         CSVReader(const string& filePath);
 
         string getFilePath() const;

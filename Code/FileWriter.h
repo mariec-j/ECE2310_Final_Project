@@ -4,11 +4,14 @@
 #include <vector>
 #include "SensorData.h"
 using namespace std;
+
 class FileWriter{
     private: 
         string outputDirectory;
 
     public:
+        FileWriter ();
+
         FileWriter (const string& outputDirectory);
 
         string getOutputDirectory() const;
