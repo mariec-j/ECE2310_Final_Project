@@ -1,5 +1,5 @@
 #include <iostream>
-#include "ProcessorData.h"
+#include "DataProcessor.h"
 using namespace std;
 #include <list>
 #include<map>
@@ -12,15 +12,34 @@ list<SensorData> DataProcessor::getProcessedData(){
     return ProcessedData;
 }
 
-list<SensorData> DataProcessor::SetProcessedData(){
+void DataProcessor::SetProcessedData(list<SensorData> data){
     ProcessedData = data; //data is the var we passed thru in .h
 }
 
+
+
+
 //idk, its tricky now
-list<SensorData> DataProcessor::processData(){
+list<SensorData> DataProcessor::processData(list<SensorData> data){
+
 }
 
-list<SensorData> DataProcessor::groupByDevice(){
+
+
+
+
+map<string,list<SensorData>> DataProcessor::groupByDevice(list<SensorData> data){
+    
+}
+
+
+
+
+
+//do I pass anything thru this???
+void ProcessedData::convertTempToCelcius(){
+    TempC = (5/9) * (TempF - 32);
+    return Cel;
 }
 
 
