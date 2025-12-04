@@ -22,7 +22,8 @@ class DataProcessor{
     //
    void SetProcessedData (list<SensorData> data); //passing thru data 
 
-    list<SensorData> processData(list<SensorData> data);
+   //not needed same as convertTempToCelcius
+   // list<SensorData> processData(list<SensorData> data);
 
     map<string,list<SensorData>> groupByDevice(list<SensorData> data);
 
