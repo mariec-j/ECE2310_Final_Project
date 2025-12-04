@@ -4,7 +4,7 @@
 https://github.com/mariec-j/ECE2310_Final_Project
 
 ## Final Project Screen Shot 
-![Final Project UML](<Images\Screenshot 2025-11-26 at 6.11.44 PM.png>)
+![Final Project UML](<Images\UML-Diagram.png>)
 
 ## Explanations: 
 
@@ -36,9 +36,11 @@ https://github.com/mariec-j/ECE2310_Final_Project
 - FileWriter 
     - (Used by)
 
+
 **Composition:** 
 - SensorHub 
     - (Owned by)
+
 
 **Explanation:** 
 
@@ -48,33 +50,42 @@ Thirdly, FileWriter receives the list from SensorData to export the subset that 
 required to be viewed by students. Lastly, SensorData is owned by the SensorHub which 
 manages the SensorData class’ operation cycle.
 
+
+
 ### CSVReader:
 
 **Associations:**
 - SensorData 
     - (is associated with)
 
+
 **Dependency:**
 - SensorHub 
     - (SensorHub Depends on CSVReader)
+
 
 **Explanation:** 
 
 SensorHub depends on CSVReader to supply the data which is output from SensorData protocols.
 
 
+
 ### DataProcessor:
+
 **Dependency:** 
 - SensorHub 
     - (Hub depends on DataProcessor)
+
 
 **Association:** 
 - SensorData 
     - (uses)
 
+
 **Explanation:** 
 
 SensorHub depends on DataProcessor for data transformations, while DataProcessor uses SensorData.
+
 
 
 ### FileWriter:
@@ -83,9 +94,11 @@ SensorHub depends on DataProcessor for data transformations, while DataProcessor
 - SensorData 
     - (uses)
 
+
 **Dependency:**
 - SensorHub 
     - (SensorHub depends on FileWriter)
+
 
 **Explanation:** 
 
@@ -93,11 +106,14 @@ FileWriter uses the SensorData to fill the files it creates with
 information while the SensorHub depends on the 
 FileWriter to create and output files.
 
+
+
 ### SensorHub:
 
 **Composition:** 
 - SensorData 
     - (owns)
+
 
 **Dependency:**
 - CSVReader 
@@ -106,6 +122,7 @@ FileWriter to create and output files.
     - (uses) 
 - FileWriter 
     - (uses to output files)
+
 
 **Explanation:**
 
