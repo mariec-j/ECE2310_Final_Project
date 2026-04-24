@@ -4,7 +4,7 @@
 https://github.com/mariec-j/ECE2310_Final_Project
 
 ## Final Project Screen Shot 
-![Final Project UML](<Images\UML-Diagram.png>)
+![Final Project UML](https://github.com/mariec-j/ECE2310_Final_Project/blob/main/Images/UML-Diagram%20Revised.PNG)
 
 ## Explanations: 
 
